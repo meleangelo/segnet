@@ -25,10 +25,14 @@ sample_addhealth.R
 
 datasets_addhealth.R
 
+This will create the files used in estimation and for descriptive stats.
+
+The final datasets for the estimation using Rmpi and ergm are obtained by running the following script.
+
 datasets_for_estimation.R
 
-This will create the files used in estimation.
-This creates also a set of files from the saturated sample, which is the one used in the estimation exercise
+This will create the files used in estimation. It creates school fractions of each race and edge covariates to include in the
+formula for estimation. This creates a set of .Rdata files from the saturated sample, which is the one used in the estimation exercise
 
 ## 3. plots
 link to file
