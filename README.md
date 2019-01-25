@@ -12,16 +12,21 @@ Before running the R scripts, you need to use Stat Transfer to transform the .st
 
 XXXXXXXXXXXXX need to list the specific files for Stat Transfer
 
-Need to run the following scripts in sequence.
+Need to run the following script in sequence
 
-1. extract_addhealth.R
-2. sample_addhealth.R
-3. datasets_addhealth.R
+extract_addhealth.R
 
-This will create the file used in estimation.
+This will extract the relevant data and save in .csv format
 
 ## 2. create variables and datasets
-link to file
+Need to run the following scripts in sequence.
+
+sample_addhealth.R
+
+datasets_addhealth.R
+
+This will create the files used in estimation.
+This creates also a set of files from the saturated sample, which is the one used in the estimation exercise
 
 ## 3. plots
 link to file
