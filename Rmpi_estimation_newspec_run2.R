@@ -9,6 +9,14 @@ library(ergm)
 library(ergm.userterms)
 
 
+# open privious run data saved
+load("D:/segnet/results/estimation/Rmpi_estimation_newspec_run1.RData")
+
+
+# keep only var-cov matrix and starting value theta
+rm(list=ls()[!ls() %in% c("qq", "theta.start")])
+
+#
 # saturated schools
 #saturated<-c(1,2,3,7,8,28,58,77,81,88,106,115,126,175,194,369)
 saturated<-c(1,2,3,7,8,28,81,88,106,115,126,175,194,369)
@@ -128,29 +136,13 @@ mpi.remote.exec(library(ergm.userterms))
 # observed sufficient stats
 tobs_tot <- rowSums(tobs)
 # starting value for theta
-theta<-c( -5.044157474, 1, 1, 1, 1, 0.2,
-          0.259356084,  2.277058198, 0.575633848, 
-          0.732410943, 0.206711923, 0.039190666, 0.212548895, 0.073068835, 
-          0.405024586, 0.021722638, 0.049191195, -1.948541133,  
-          2.280103490, 1.524823072, -0.490846072,  0.185039422, 
-          -0.766403107, -1.468356295, 1.786659877, 0.448470280, 
-          0.950610139, 1.597194852, -0.775861615, 1.070339499, 
-          -1.500689484, 0.190595142, 2.885862629, -1.832684418, 
-          2.217127585, -1.240819045, 3.324373506, 0.863145951, 
-          -1.951783438, 0.157419958, -0.379926712, 0.535236616, 
-          #-0.212981612, 0.106510027, 0.363385523, -0.073684082, 
-          -0.094063802, -0.106751101, -0.002036975, 0.162612509, 
-          0.169127327, 0.181000003)
+theta <- theta.start
 
 # parameter simulations
 number_param_simulations <- 10000
 # var-covar matrix for RW proposal
-sigma.proposal <- diag(c(.5,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.1,.25,
-                         .25,.25,.25,.25,.25,.25,.25,.25,.25,.25,.25,.25,
-                         .5,.1,.1,.1,.1,.1,
-                         #.1,.1,.1,.1,
-                         .5,.05,.05,.05,.05,.05), 
-                       nrow = 48, ncol = 48)
+sigma.proposal <- qq # this is the cov of Theta in the previous run
+sigma.proposal <- sigma.proposal*(2.38^2)/48
 
 # prior mean
 mean.prior <- rep(0,48)
@@ -178,7 +170,7 @@ for (s in 1:number_param_simulations){
   rr <- mpi.remote.exec(g<-simulate.formula(estimation.formula, coef = theta.new, 
                                             basis = ff[[mpi.comm.rank()]],
                                             control=control.simulate.formula(
-                                              MCMC.burnin=1000)))
+                                              MCMC.burnin=5000)))
   # compute summary stats of simulated networks
   tsim <- mpi.remote.exec(summary(estimation.formula), simplify = T)
   # aggregate summary stats
@@ -218,4 +210,4 @@ theta.start <- as.numeric(Theta[number_param_simulations,])
 
 #save.image
 
-save.image("D:/segnet/results/estimation/Rmpi_estimation_newspec_run1.RData")
+save.image("D:/segnet/results/estimation/Rmpi_estimation_newspec_run2.RData")

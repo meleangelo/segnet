@@ -32,6 +32,13 @@ for (ss in 1:16) {
     adj[edgelist[l,1],edgelist[l,2]] <- 1
   }
   
+  # generate variable with race of individual nodes dummies
+  nodeinfo$white <- 1*(nodeinfo$race==1)
+  nodeinfo$black <- 1*(nodeinfo$race==2)
+  nodeinfo$asian <- 1*(nodeinfo$race==3)
+  nodeinfo$hisp <- 1*(nodeinfo$race==4)
+  nodeinfo$other <- 1*(nodeinfo$race==5)
+
   # generate variable with race fractions
   nodeinfo$fwhite <- sum(nodeinfo$race==1)/n
   nodeinfo$fblack <- sum(nodeinfo$race==2)/n
@@ -51,6 +58,9 @@ for (ss in 1:16) {
   set.edge.value(net, "aa_fasian", aa_fasian)
   set.edge.value(net, "hh_fhisp", hh_fhisp)
   set.edge.value(net, "oo_fother", oo_fother)
+  
+  
+
   
   urls<-paste("E:/backup_phoenix/addhealth/schools/saturated/net",saturated[ss],".Rdata",sep="")
   rm(list=setdiff(ls(), list("net", "urls")))
