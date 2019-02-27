@@ -38,7 +38,48 @@ formula for estimation. This creates a set of .Rdata files from the saturated sa
 link to file
 
 ## 4. estimation 
-link to file
+
+### Rmpi package in r
+To run the estimation we need to use MPI in R. 
+
+LINK TO MPI INSTALLATION.
+
+### Custom network statistics in ergm
+The payoff functions for the indirect links are not included
+in the standard `r ergm` package. To add these statistics you need to 
+download the `r ergm.userterms` package, designed to include new statistics.
+
+The instruction on how to use this package are here: LINK TO JOSS.
+
+Our function is here: LINK TO ind_homophily
+
+And the corresponding .c code is here: LINK TO ind_homophily.c
+
+### Estimation codes
+The codes for estimation are:
+
+*Table 1*
+
+Rmpi_estimation_run1.R 
+Rmpi_estimation_run2.R 
+Rmpi_estimation_run3.R 
+
+We run the code 3 times, to find a good starting value and to improve the 
+proposal distribution. In the first run we use a random walk proposal with
+diagonal variance, that is each parameter is independent. This is clearly suboptimal. 
+We use 10000 parameter simulations and 1000 network simulations per parameter. This finds
+a suitable starting value in few hours. We then use the estimated series of parameters to compute the covariance matrix to input in the random walk for the second run.
+We repeat for another run, and in the third run we use 100000 simulations and 5000 network simulations. 
+
+
+
+TABLE 2
+
+Rmpi_estimation_dirutil_run1.R
+Rmpi_estimation_dirutil_run2.R
+
+3.
+4.
 
 ## 5. policy counterfactuals
 link to file
