@@ -60,7 +60,7 @@ The codes for estimation are:
 
 *Table 1*
 
-Rmpi_estimation_run1.R 
+[run 1](Rmpi_estimation_run1.R)
 Rmpi_estimation_run2.R 
 Rmpi_estimation_run3.R 
 
