@@ -292,3 +292,229 @@ for (i in dflist88) {
 }
 
 
+
+
+
+
+
+#########################################################
+#######################################
+############################
+###################
+###########
+#####
+###
+###
+##
+#
+##
+#
+
+
+
+
+
+
+
+##################################
+# SCHOOL  88 and 106: swap students of different income levels
+###################################
+
+
+# use median to separate rich and poor kids
+
+rm(list=ls())
+library(statnet)
+
+satschool <- 88 
+urls<-paste("E:/backup_phoenix/addhealth/schools/saturated/net",satschool,".Rdata",sep="")
+load(urls)
+
+net88 <- net
+
+# create dataset with all attributes of network 88
+whites88 <- which(get.vertex.attribute(net, "white")==1) # white students ids
+blacks88 <- which(get.vertex.attribute(net, "black")==1) 
+asians88 <- which(get.vertex.attribute(net, "asian")==1)
+hisps88  <- which(get.vertex.attribute(net, "hisp")==1)
+others88 <- which(get.vertex.attribute(net, "other")==1)
+
+loginc88 <- get.vertex.attribute(net, "loginc")
+medinc88 <- median(loginc88)
+rich88 <- which(loginc88 > medinc88)
+nonrich88 <- which(loginc88 <= medinc88)
+
+
+attrnames <- list.vertex.attributes(net)
+attr88 <- data.frame(matrix(NA, nrow = 90, ncol = length(attrnames)))
+names(attr88) <- attrnames
+for (i in 1:length(attrnames)) {
+  attrvalue <- get.vertex.attribute(net, attrnames[i])
+  attr88[,i] <- attrvalue 
+}
+attr88$vertex.names <- NULL
+
+
+
+# create datasset for school 106
+satschool <- 106 
+urls<-paste("E:/backup_phoenix/addhealth/schools/saturated/net",satschool,".Rdata",sep="")
+load(urls)
+
+
+net106 <- net
+
+# create dataset with all attributes of network 106
+whites106 <- which(get.vertex.attribute(net, "white")==1) # white students ids
+blacks106 <- which(get.vertex.attribute(net, "black")==1) 
+asians106 <- which(get.vertex.attribute(net, "asian")==1)
+hisps106  <- which(get.vertex.attribute(net, "hisp")==1)
+others106 <- which(get.vertex.attribute(net, "other")==1)
+unknown106 <- which(get.vertex.attribute(net, "race")==0)
+
+loginc106 <- get.vertex.attribute(net, "loginc")
+medinc106 <- median(loginc106)
+rich106 <- which(loginc106 > medinc106)
+nonrich106 <- which(loginc106 <= medinc106)
+
+
+attrnames <- list.vertex.attributes(net)
+attr106 <- data.frame(matrix(NA, nrow = 81, ncol = length(attrnames)))
+names(attr106) <- attrnames
+for (i in 1:length(attrnames)) {
+  attrvalue <- get.vertex.attribute(net, attrnames[i])
+  attr106[,i] <- attrvalue 
+}
+attr106$vertex.names <- NULL
+
+
+
+# policy allocations
+attr88_1 <- attr88 # initial value
+attr106_1 <- attr106 # initial value
+
+attr88_2 <- rbind(attr88[rich88[1:40],], 
+                  attr106[nonrich106[1:5],],
+                  attr88[nonrich88,])
+attr106_2 <- rbind(attr88[rich88[41:45],], 
+                   attr106[rich106,], 
+                   attr106[nonrich106[6:41],])
+
+attr88_3 <- rbind(attr88[rich88[1:35],], 
+                  attr106[nonrich106[1:10],],
+                  attr88[nonrich88,])
+attr106_3 <- rbind(attr88[rich88[36:45],], 
+                   attr106[rich106,], 
+                   attr106[nonrich106[11:41],])
+
+attr88_4 <- rbind(attr88[rich88[1:30],], 
+                  attr106[nonrich106[1:15],],
+                  attr88[nonrich88,])
+attr106_4 <- rbind(attr88[rich88[31:45],], 
+                   attr106[rich106,], 
+                   attr106[nonrich106[16:41],])
+
+attr88_5 <- rbind(attr88[rich88[1:25],], 
+                  attr106[nonrich106[1:20],],
+                  attr88[nonrich88,])
+attr106_5 <- rbind(attr88[rich88[26:45],], 
+                   attr106[rich106,], 
+                   attr106[nonrich106[21:41],])
+
+attr88_6 <- rbind(attr88[rich88[1:20],], 
+                  attr106[nonrich106[1:25],],
+                  attr88[nonrich88,])
+attr106_6 <- rbind(attr88[rich88[21:45],], 
+                   attr106[rich106,], 
+                   attr106[nonrich106[26:41],])
+
+attr88_7 <- rbind(attr88[rich88[1:15],], 
+                  attr106[nonrich106[1:30],],
+                  attr88[nonrich88,])
+attr106_7 <- rbind(attr88[rich88[16:45],], 
+                   attr106[rich106,], 
+                   attr106[nonrich106[31:41],])
+
+attr88_8 <- rbind(attr88[rich88[1:10],], 
+                  attr106[nonrich106[1:35],],
+                  attr88[nonrich88,])
+attr106_8 <- rbind(attr88[rich88[11:45],], 
+                   attr106[rich106,], 
+                   attr106[nonrich106[36:41],])
+
+dflist106 <- list(attr106_1,attr106_2, attr106_3,attr106_4,attr106_5,attr106_6,attr106_7,
+                  attr106_8)
+dflist88 <- list(attr88_1,attr88_2, attr88_3,attr88_4,attr88_5,attr88_6,attr88_7,
+                 attr88_8)
+policy_num <- 1
+for (i in dflist106) {
+  n <- dim(i)[1]
+  net <- network(net106, vertex.attr = i, vertex.attrnames = names(i))
+  # generate variable with race fractions
+  i$fwhite <- sum(i$race==1)/n
+  i$fblack <- sum(i$race==2)/n
+  i$fasian <- sum(i$race==3)/n
+  i$fhisp <- sum(i$race==4)/n
+  i$fother <- sum(i$race==5)/n
+  
+  ww_fwhite <- (1*(i$race==1) %*% t(1*(i$race==1)) )*i$fwhite[1]
+  bb_fblack <- (1*(i$race==2) %*% t(1*(i$race==2)) )*i$fblack[1]
+  aa_fasian <- (1*(i$race==3) %*% t(1*(i$race==3)) )*i$fasian[1]
+  hh_fhisp <- (1*(i$race==4) %*% t(1*(i$race==4)) )*i$fhisp[1]
+  oo_fother <- (1*(i$race==5) %*% t(1*(i$race==5)) )*i$fother[1]
+  
+  set.vertex.attribute(net, "fwhite", i$fwhite)
+  set.vertex.attribute(net, "fblack", i$fblack)
+  set.vertex.attribute(net, "fasian", i$fasian)
+  set.vertex.attribute(net, "fhisp", i$fhisp)
+  set.vertex.attribute(net, "fother", i$fother)
+  
+  set.edge.value(net, "ww_fwhite", ww_fwhite)
+  set.edge.value(net, "bb_fblack", bb_fblack)
+  set.edge.value(net, "aa_fasian", aa_fasian)
+  set.edge.value(net, "hh_fhisp", hh_fhisp)
+  set.edge.value(net, "oo_fother", oo_fother)
+  
+  urls <- paste("E:/backup_phoenix/addhealth/schools/saturated/netpolicy_rich106_",policy_num,".Rdata",sep="")
+  
+  save(net, file = urls)
+  policy_num <- policy_num+1
+}
+
+
+policy_num <- 1
+for (i in dflist88) {
+  n <- dim(i)[1]
+  net <- network(net88, vertex.attr = i, vertex.attrnames = names(i))
+  # generate variable with race fractions
+  i$fwhite <- sum(i$race==1)/n
+  i$fblack <- sum(i$race==2)/n
+  i$fasian <- sum(i$race==3)/n
+  i$fhisp <- sum(i$race==4)/n
+  i$fother <- sum(i$race==5)/n
+  
+  ww_fwhite <- (1*(i$race==1) %*% t(1*(i$race==1)) )*i$fwhite[1]
+  bb_fblack <- (1*(i$race==2) %*% t(1*(i$race==2)) )*i$fblack[1]
+  aa_fasian <- (1*(i$race==3) %*% t(1*(i$race==3)) )*i$fasian[1]
+  hh_fhisp <- (1*(i$race==4) %*% t(1*(i$race==4)) )*i$fhisp[1]
+  oo_fother <- (1*(i$race==5) %*% t(1*(i$race==5)) )*i$fother[1]
+  
+  set.vertex.attribute(net, "fwhite", i$fwhite)
+  set.vertex.attribute(net, "fblack", i$fblack)
+  set.vertex.attribute(net, "fasian", i$fasian)
+  set.vertex.attribute(net, "fhisp", i$fhisp)
+  set.vertex.attribute(net, "fother", i$fother)
+  
+  set.edge.value(net, "ww_fwhite", ww_fwhite)
+  set.edge.value(net, "bb_fblack", bb_fblack)
+  set.edge.value(net, "aa_fasian", aa_fasian)
+  set.edge.value(net, "hh_fhisp", hh_fhisp)
+  set.edge.value(net, "oo_fother", oo_fother)
+  
+  urls <- paste("E:/backup_phoenix/addhealth/schools/saturated/netpolicy_rich88_",policy_num,".Rdata",sep="")
+  
+  save(net, file = urls)
+  policy_num <- policy_num+1
+}
+
+
