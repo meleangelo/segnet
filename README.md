@@ -7,6 +7,8 @@ Mele, Angelo (2017), "A structural model of dense network formation", Econometri
 
 Data are from the National Longitudinal Study of Adolescents Health (Add Health). Because of the sensitive nature of the data they are available under contract from UNC Chapel Hill. Researchers interested in the data can apply at https://www.cpc.unc.edu/projects/addhealth/documentation/restricteduse 
 
+I cannot post the result of the estimations or simulations, because they contain the network data and the information about the students. If you have any problem replicating these results, please contact me at [angelo.mele@jhu.edu](mailto:angelo.mele@jhu.edu)
+
 **REMARK**: many of these codes run for a very long time (some for days).
 
 
