@@ -66,7 +66,9 @@ The results of the estimation are reported in Table 2. This table contains the o
 
 The codes for estimation are:
 
-*Table 4*
+**Table 4**
+
+This corresponds to model (2) in Table 2.
 
 Run 1: [Rmpi_estimation_run1.R](Rmpi_estimation_run1.R)
 
@@ -83,7 +85,9 @@ We repeat for another run, and in the third run we use 100000 simulations and 50
 
 
 
-*Table 3*
+**Table 3**
+
+This corresponds to model (1) in table 2.
 
 Run 1: [Rmpi_estimation_dirutil_run1.R](Rmpi_estimation_dirutil_run1.R)
 
@@ -92,7 +96,8 @@ Run 2: [Rmpi_estimation_dirutil_run2.R](Rmpi_estimation_dirutil_run2.R)
 For this simpler model that does not contain payoffs from link externalities, we only need two runs of the simulations, as it converges quite fast.
 
 
-*Table 5*
+**Table 5**
+
 This corresponds to model (4) in Table 2 in the paper.
 
 Run 1: [Rmpi_estimation_newspec_run1.R](Rmpi_estimation_newspec_run1.R)
@@ -102,7 +107,8 @@ Run 2: [Rmpi_estimation_newspec_run2.R](Rmpi_estimation_newspec_run2.R)
 Run 3: [Rmpi_estimation_newspec_run3.R](Rmpi_estimation_newspec_run3.R)
 
 
-*Table 6*
+**Table 6**
+
 This corresponds to model (3) in Table 2 in the paper.
 
 Run 1: [Rmpi_estimation_newspec_dirutil_run1.R](Rmpi_estimation_newspec_dirutil_run1.R)
@@ -111,13 +117,27 @@ Run 2: [Rmpi_estimation_newspec_dirutil_run2.R](Rmpi_estimation_newspec_dirutil_
 
 For this simpler model that does not contain payoffs from link externalities, we only need two runs of the simulations, as it converges quite fast.
 
-*Table 7*
+
+**Table 7**
+
 This corresponds to model (6) in Table 2 in the paper.
 
-*Table 8*
+Run 1: [Rmpi_estimation_newspec_allsat_run1.R](Rmpi_estimation_newspec_allsat_run1.R)
+
+Run 2: [Rmpi_estimation_newspec_allsat_run2.R](Rmpi_estimation_newspec_allsat_run2.R) 
+
+Run 3: [Rmpi_estimation_newspec_allsat_run3.R](Rmpi_estimation_newspec_allsat_run3.R)
+
+
+
+**Table 8**
+
 This corresponds to model (5) in Table 2 in the paper.
 
 
+Run 1: [Rmpi_estimation_newspec_allsat_dirutil_run1.R](Rmpi_estimation_newspec_allsat_dirutil_run1.R)
+
+Run 2: [Rmpi_estimation_newspec_allsat_dirutil_run2.R](Rmpi_estimation_newspec_allsat_dirutil_run2.R)
 
 
 ## 5. policy counterfactuals
