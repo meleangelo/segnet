@@ -95,11 +95,11 @@ For this simpler model that does not contain payoffs from link externalities, we
 *Table 5*
 This corresponds to model (4) in Table 2 in the paper.
 
-Run 1: [Rmpi_estimation_newspec_run1.R](Rmpi_newspec_estimation_run1.R)
+Run 1: [Rmpi_estimation_newspec_run1.R](Rmpi_estimation_newspec_run1.R)
 
-Run 2: [Rmpi_estimation_newspec_run2.R](Rmpi_newspec_estimation_run2.R) 
+Run 2: [Rmpi_estimation_newspec_run2.R](Rmpi_estimation_newspec_run2.R) 
 
-Run 3: [Rmpi_estimation_newspec_run3.R](Rmpi_newspec_estimation_run3.R)
+Run 3: [Rmpi_estimation_newspec_run3.R](Rmpi_estimation_newspec_run3.R)
 
 
 *Table 6*
