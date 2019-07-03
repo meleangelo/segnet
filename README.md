@@ -61,30 +61,36 @@ Our function is here: [ind_homophily.R](ind_homophily)
 And the corresponding .c code is here: [ind_homophily.c](ind_homophily.c)
 
 ### Estimation codes
+
+The results of the estimation are reported in Table 2. This table contains the output of several estimation runs, which are contained in the appendix. The following codes reproduce the results of Table 2, but the complete posterior estimates are reported in Tables 3 to 8 in the appendix.
+
 The codes for estimation are:
 
-*Table 1*
+*Table 4*
 
-[run 1](Rmpi_estimation_run1.R)
-Rmpi_estimation_run2.R 
-Rmpi_estimation_run3.R 
+Run 1: [Rmpi_estimation_run1.R](Rmpi_estimation_run1.R)
 
-We run the code 3 times, to find a good starting value and to improve the 
-proposal distribution. In the first run we use a random walk proposal with
+Run 2: [Rmpi_estimation_run2.R](Rmpi_estimation_run2.R) 
+
+Run 3: [Rmpi_estimation_run3.R](Rmpi_estimation_run3.R)
+
+I run the code 3 times, to find a good starting value and to improve the 
+proposal distribution. In the first run I use a random walk proposal with
 diagonal variance, that is each parameter is independent. This is clearly suboptimal. 
-We use 10000 parameter simulations and 1000 network simulations per parameter. This finds
+I use 10000 parameter simulations and 1000 network simulations per parameter. This finds
 a suitable starting value in few hours. We then use the estimated series of parameters to compute the covariance matrix to input in the random walk for the second run.
 We repeat for another run, and in the third run we use 100000 simulations and 5000 network simulations. 
 
 
 
-TABLE 2
+#Table 3*
 
-Rmpi_estimation_dirutil_run1.R
-Rmpi_estimation_dirutil_run2.R
+Run 1: [Rmpi_estimation_dirutil_run1.R](Rmpi_estimation_dirutil_run1.R)
 
-3.
-4.
+Run 2: [Rmpi_estimation_dirutil_run2.R](Rmpi_estimation_dirutil_run2.R)
+
+For this simpler model that does not contain payoffs from link externalities, we only need two runs of the simulations, as it converges quite fast.
+
 
 ## 5. policy counterfactuals
 link to file
