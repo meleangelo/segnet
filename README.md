@@ -14,22 +14,22 @@ XXXXXXXXXXXXX need to list the specific files for Stat Transfer
 
 Then run the following file to extract the data and save in .csv.
 
-extract_addhealth.R
+[extract_addhealth.R](extract_addhealth.R)
 
 
 
 ## 2. create variables and datasets
 Need to run the following scripts in sequence.
 
-1. sample_addhealth.R : this will collect the sample used in estimation.
+1. [sample_addhealth.R](sample_addhealth.R) : this will collect the sample used in estimation.
 
-2. datasets_addhealth.R: this will generate the datasets
+2. [datasets_addhealth.R](datasets_addhealth.R): this will generate the datasets
 
 This will create the files used for descriptive stats.
 
 The final datasets for the estimation using Rmpi and ergm are obtained by running the following script.
 
-3. datasets_for_estimation.R: this create the files for estimation using parallelization through the package Rmpi.
+3. [datasets_for_estimation.R](datasets_for_estimation.R): this creates the files for estimation using parallelization through the package Rmpi.
 
 This will create the files used in estimation. It creates school fractions of each race and edge covariates to include in the
 formula for estimation. It will generate a set of .Rdata files from the saturated sample of Add Health, which is the one used in the estimation exercise
@@ -47,14 +47,18 @@ To run the estimation we need to use MPI in R. Notice that your installation wil
 
 ### Custom network statistics in ergm
 The payoff functions for the indirect links are not included
-in the standard `r ergm` package. To add these statistics you need to 
-download the `r ergm.userterms` package, designed to include new statistics.
+in the standard `ergm` package. To add these statistics you need to 
+download the `ergm.userterms` package, designed to include new statistics.
 
-The instruction on how to use this package are here: LINK TO JOSS.
+The instruction on how to use this package are here: [Link to vignette in JOSS](https://www.jstatsoft.org/article/view/v052i02).
 
-Our function is here: LINK TO ind_homophily
 
-And the corresponding .c code is here: LINK TO ind_homophily.c
+Hunter DR, Goodreau SM, Handcock MS (2013). ergm.userterms: A Template Package for Ex-
+tending statnet, Journal of Statistical Software 52(2), 1-25, URL http://www.jstatsoft.org/v52/i02/.
+
+Our function is here: [ind_homophily.R](ind_homophily)
+
+And the corresponding .c code is here: [ind_homophily.c](ind_homophily.c)
 
 ### Estimation codes
 The codes for estimation are:
