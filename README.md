@@ -1,6 +1,6 @@
 # segnet
 This repositories contains the replication files for:
-Mele, Angelo (2019), "Segregation in Social Networks: A Structural Approach"
+Mele, Angelo (2019), "Does school desegregation promote diverse interactions? An equilibrium model of segregation within schools", American Economic Journal: Economic Policy.
 
 The paper provides an empirical application of the model developed in 
 Mele, Angelo (2017), "A structural model of dense network formation", Econometrica, 85(3), pp 825-850
@@ -12,27 +12,27 @@ Before running the R scripts, you need to use Stat Transfer to transform the .st
 
 XXXXXXXXXXXXX need to list the specific files for Stat Transfer
 
-Need to run the following script in sequence
+Then run the following file to extract the data and save in .csv.
 
 extract_addhealth.R
 
-This will extract the relevant data and save in .csv format
+
 
 ## 2. create variables and datasets
 Need to run the following scripts in sequence.
 
-sample_addhealth.R
+1. sample_addhealth.R : this will collect the sample used in estimation.
 
-datasets_addhealth.R
+2. datasets_addhealth.R: this will generate the datasets
 
-This will create the files used in estimation and for descriptive stats.
+This will create the files used for descriptive stats.
 
 The final datasets for the estimation using Rmpi and ergm are obtained by running the following script.
 
-datasets_for_estimation.R
+3. datasets_for_estimation.R: this create the files for estimation using parallelization through the package Rmpi.
 
 This will create the files used in estimation. It creates school fractions of each race and edge covariates to include in the
-formula for estimation. This creates a set of .Rdata files from the saturated sample, which is the one used in the estimation exercise
+formula for estimation. It will generate a set of .Rdata files from the saturated sample of Add Health, which is the one used in the estimation exercise
 
 ## 3. plots
 link to file
@@ -40,9 +40,10 @@ link to file
 ## 4. estimation 
 
 ### Rmpi package in r
-To run the estimation we need to use MPI in R. 
+To run the estimation we need to use MPI in R. Notice that your installation will depend on the OS you are using. My codes were run on a Windows machine, with Windows 7.
 
-LINK TO MPI INSTALLATION.
+[Rmpi package installation](http://fisher.stats.uwo.ca/faculty/yu/Rmpi/)
+
 
 ### Custom network statistics in ergm
 The payoff functions for the indirect links are not included
