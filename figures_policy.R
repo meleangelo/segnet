@@ -37,7 +37,7 @@ plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1),
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 # plot of mean racial segregation, all races (all)
@@ -73,12 +73,12 @@ for (policy in 2:8) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average black segregation in school 88",
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -95,15 +95,15 @@ for (policy in 2:8) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average white segregation in school 88",
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
-legend("bottomleft", c("freeman", "ssi", "coleman"), 
-       text.col = c("red", "blue", "black"), 
-       col = c("red", "blue", "black"),  pch = 21, lwd = 2, lty = c(1,2,3))
+legend("bottomright", c("freeman", "ssi"), 
+       text.col = c("red", "blue"), 
+       col = c("red", "blue"),  pch = 21, lwd = 2, lty = c(1,2))
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -119,12 +119,12 @@ for (policy in 2:8) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average income segregation in school 88",
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 # plot of mean income segregation (median) (all)
@@ -139,12 +139,12 @@ for (policy in 2:8) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average income segregation in school 88",
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 dev.off()
 
@@ -174,7 +174,7 @@ plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1),
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -216,15 +216,15 @@ for (policy in 2:8) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average black segregation in school 106",
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
-legend("bottomleft", c("freeman", "ssi", "coleman"), 
-       text.col = c("red", "blue", "black"), 
-       col = c("red", "blue", "black"),  pch = 21, lwd = 2, lty = c(1,2,3))
+legend("bottomleft", c("freeman", "ssi"), 
+       text.col = c("red", "blue"), 
+       col = c("red", "blue"),  pch = 21, lwd = 2, lty = c(1,2))
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -241,12 +241,12 @@ for (policy in 2:8) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average white segregation in school 106",
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -264,12 +264,12 @@ for (policy in 2:8) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average income segregation in school 106",
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -289,13 +289,13 @@ for (policy in 2:8) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average income segregation in school 106",
      xlab = "fraction with income below median in original school", 
      ylab = "segregation level")
 
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -589,7 +589,7 @@ plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1),
      xlab = "fraction of blacks", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 # plot of mean racial segregation, all races (all)
@@ -625,12 +625,12 @@ for (policy in 2:16) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average black segregation in school 88",
      xlab = "fraction of blacks", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -647,15 +647,15 @@ for (policy in 2:16) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average white segregation in school 88",
      xlab = "fraction of blacks", 
      ylab = "segregation level")
-legend("bottomleft", c("freeman", "ssi", "coleman"), 
-       text.col = c("red", "blue", "black"), 
-       col = c("red", "blue", "black"),  pch = 21, lwd = 2, lty = c(1,2,3))
+legend("bottomright", c("freeman", "ssi"), 
+       text.col = c("red", "blue"), 
+       col = c("red", "blue"),  pch = 21, lwd = 2, lty = c(1,2))
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -671,12 +671,12 @@ for (policy in 2:16) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average income segregation in school 88",
      xlab = "fraction of blacks", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 # plot of mean income segregation (median) (all)
@@ -691,12 +691,12 @@ for (policy in 2:16) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average income segregation in school 88",
      xlab = "fraction of blacks", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 dev.off()
 
@@ -726,7 +726,7 @@ plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1),
      xlab = "fraction of blacks", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -768,12 +768,12 @@ for (policy in 2:16) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average black segregation in school 106",
      xlab = "fraction of blacks", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -790,15 +790,15 @@ for (policy in 2:16) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average white segregation in school 106",
      xlab = "fraction of blacks", 
      ylab = "segregation level")
-legend("bottomleft", c("freeman", "ssi", "coleman"), 
-       text.col = c("red", "blue", "black"), 
-       col = c("red", "blue", "black"),  pch = 21, lwd = 2, lty = c(1,2,3))
+legend("bottomright", c("freeman", "ssi"), 
+       text.col = c("red", "blue"), 
+       col = c("red", "blue"),  pch = 21, lwd = 2, lty = c(1,2))
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -816,12 +816,12 @@ for (policy in 2:16) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average income segregation in school 106",
      xlab = "fraction of blacks", 
      ylab = "segregation level")
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -841,13 +841,13 @@ for (policy in 2:16) {
   #  x <- c(x, policy)
 }
 
-plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(-1,1), 
+plot(x,mean_freeman, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Average income segregation in school 106",
      xlab = "fraction of blacks", 
      ylab = "segregation level")
 
 lines(x,mean_ssi, type = "b", lwd = 2, lty = 2, col = "blue")
-lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
+#lines(x,mean_coleman, type = "b", lwd = 2, lty = 3, col = "black")
 
 
 
@@ -859,7 +859,7 @@ dev.off()
 
 
 # school 106 hispanics
-pdf("richswaphisp106.pdf")
+pdf("raceswaphisp106.pdf")
 par(mfrow=c(1,1))
 # plot of mean racial segregation, hispanics (all)
 # only school 106
@@ -890,7 +890,7 @@ dev.off()
 
 
 # density and transitivity
-pdf("rich_densitytrans.pdf")
+pdf("race_densitytrans.pdf")
 par(mfrow=c(2,1))
 
 # plot of density and transitivity school 88
@@ -937,7 +937,7 @@ dev.off()
 
 # race and gender of central individuals
 
-pdf("rich_racegendercentral.pdf")
+pdf("race_racegendercentral.pdf")
 par(mfrow=c(3,2))
 #INDEGREE
 
@@ -952,7 +952,7 @@ for (policy in 2:16) {
 
 plot(x,indeg_black, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Race and gender, most popular, school 88",
-     xlab = "fraction income below median (original school)", 
+     xlab = "fraction of blacks", 
      ylab = "fraction of simulations")
 lines(x,indeg_female, type = "b", lwd = 2, lty = 2, col = "blue")
 #legend("topleft", c("student is black", "student is female"), 
@@ -972,7 +972,7 @@ for (policy in 2:16) {
 
 plot(x,indeg_black, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Race and gender, most popular, school 106",
-     xlab = "fraction income below median (original school)", 
+     xlab = "fraction of blacks", 
      ylab = "fraction of simulations")
 lines(x,indeg_female, type = "b", lwd = 2, lty = 2, col = "blue")
 #legend("topleft", c("student is black", "student is female"), 
@@ -999,7 +999,7 @@ for (policy in 2:16) {
 
 plot(x,outdeg_black, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Race and gender, most active, school 88",
-     xlab = "fraction income below median (original school)", 
+     xlab = "fraction of blacks", 
      ylab = "fraction of simulations")
 lines(x,outdeg_female, type = "b", lwd = 2, lty = 2, col = "blue")
 #legend("topleft", c("student is black", "student is female"), 
@@ -1019,7 +1019,7 @@ for (policy in 2:16) {
 
 plot(x,outdeg_black, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Race and gender, most active, school 106",
-     xlab = "fraction income below median (original school)", 
+     xlab = "fraction of blacks", 
      ylab = "fraction of simulations")
 lines(x,outdeg_female, type = "b", lwd = 2, lty = 2, col = "blue")
 #legend("bottomright", c("student is black", "student is female"), 
@@ -1044,7 +1044,7 @@ for (policy in 2:16) {
 
 plot(x,eigdeg_black, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Race and gender, most central, school 88",
-     xlab = "fraction income below median (original school)", 
+     xlab = "fraction of blacks", 
      ylab = "fraction of simulations")
 lines(x,eigdeg_female, type = "b", lwd = 2, lty = 2, col = "blue")
 #legend("bottomright", c("student is black", "student is female"), 
@@ -1064,7 +1064,7 @@ for (policy in 2:16) {
 
 plot(x,eigdeg_black, type = "b", col = "red", lwd = 2, ylim= c(0,1), 
      main = "Race and gender, most central, school 106",
-     xlab = "fraction income below median (original school)", 
+     xlab = "fraction of blacks", 
      ylab = "fraction of simulations")
 lines(x,eigdeg_female, type = "b", lwd = 2, lty = 2, col = "blue")
 legend("bottomright", c("student is black", "student is female"), 
