@@ -1,5 +1,5 @@
 # segnet
-This repositories contains the replication files for:
+This repository contains the replication files for:
 Mele, Angelo (2019), "Does school desegregation promote diverse interactions? An equilibrium model of segregation within schools", American Economic Journal: Economic Policy.
 
 The paper provides an empirical application of the model developed in 
@@ -11,11 +11,17 @@ I cannot post the result of the estimations or simulations, because they contain
 
 **REMARK**: many of these codes run for a very long time (some for days).
 
+**REMARK**: all the results in the paper were obtained using a Dell Precision T7610 PC with Intel Xeon CPU E5-2697 v2 @ 2.70GHz with 48 threads and 64GB RAM.
+
 
 ## 1. extract data
 Before running the R scripts, you need to use Stat Transfer to transform the .stc files into .xpt files. 
 
-XXXXXXXXXXXXX need to list the specific files for Stat Transfer
+The list of files is
+
+- ICPSR_27022/DS0001/DA27022P1.stc
+- ICPSR_27021/DS0001/DA27021P1.stc
+
 
 Then run the following file to extract the data and save in .csv.
 
@@ -39,10 +45,8 @@ The final datasets for the estimation using Rmpi and ergm are obtained by runnin
 This will create the files used in estimation. It creates school fractions of each race and edge covariates to include in the
 formula for estimation. It will generate a set of .Rdata files from the saturated sample of Add Health, which is the one used in the estimation exercise
 
-## 3. plots
-link to file
 
-## 4. estimation 
+## 3. estimation 
 
 ### Rmpi package in r
 To run the estimation we need to use MPI in R. Notice that your installation will depend on the OS you are using. My codes were run on a Windows machine, with Windows 7.
@@ -145,7 +149,7 @@ Run 1: [Rmpi_estimation_newspec_allsat_dirutil_run1.R](Rmpi_estimation_newspec_a
 Run 2: [Rmpi_estimation_newspec_allsat_dirutil_run2.R](Rmpi_estimation_newspec_allsat_dirutil_run2.R)
 
 
-## 5. policy counterfactuals
+## 4. policy counterfactuals
 
 First I generate the datasets for each policy swap using the following code. For each school, I swap the students of different racial group (or income group) and generate a new school dataset containing the new mix of students. 
 
@@ -163,6 +167,8 @@ Policy simulations: [policy_simulation.R](policy_simulation.R)
 I then summarize the results of these simulations using standard network and segregation measures, using the following code.
 
 Policy summaries: [policy_summary.R](policy_summary.R)
+
+Policy Figures: [figures_policy.R](figures_policy.R)
 
 
 
