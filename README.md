@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # segnet
 This repository contains the replication files for:
 Mele, Angelo (2019), "Does school desegregation promote diverse interactions? An equilibrium model of segregation within schools", American Economic Journal: Economic Policy.
