@@ -65,9 +65,9 @@ The instruction on how to use this package are here: [Link to vignette in JOSS](
 Hunter DR, Goodreau SM, Handcock MS (2013). ergm.userterms: A Template Package for Ex-
 tending statnet, Journal of Statistical Software 52(2), 1-25, URL http://www.jstatsoft.org/v52/i02/.
 
-Our function is here: [ind_homophily.R](ind_homophily)
+Our function is here: [InitErgmTerm.users.R](InitErgmTerm.users.R)
 
-And the corresponding .c code is here: [ind_homophily.c](ind_homophily.c)
+And the corresponding .c code is here: [changestats.users.c](changestats.users.c)
 
 ### Estimation codes
 
