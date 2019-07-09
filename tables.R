@@ -177,4 +177,19 @@ library(xtable)
 print(xtable(mm,digits=4),type="latex")
 
 
+#### SEGREGATION AND OTHER INDICATORS FOR TABLE 1
 
+rm(list=ls())
+setwd("/Users/Angelo/Dropbox/segnetworks/results/")
+load("table1_seg.Rdata")
+
+
+library(xtable)
+
+keep_rows <- c(1,2,6,7,9,10,14,15,18,22,23,25,27)
+table1add <- tables[keep_rows,]
+rownames(table1add) <- c("FSI gender", "FSI race", "FSI income 90", "FSI income 50", 
+                         "SSI gender", "SSI race", "SSI income 90", "SSI income 50",
+                         "CHI females", "CHI income 90", "CHI income 50", 
+                         "Clustering", "Density")
+xtable(table1add, digits=3)
